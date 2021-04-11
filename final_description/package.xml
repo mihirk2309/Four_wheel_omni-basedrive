@@ -1,0 +1,26 @@
+<package format="2">
+	<name>final_description</name>
+	<version>0.0.2</version>
+	<description>
+		This package constains the model files of the omnibase(omniwheeled robot)
+	</description>
+
+	<license>BSD</license>
+
+	<url type="website">https://erc-bpgc.github.io/omnibase/</url>
+	<maintainer email="hardesh1deshpande@gmail.com">Harshal Deshpande</maintainer>
+	<maintainer email="mihirk284@gmail.com">Mihir Kulkarni</maintainer>
+
+	<author>Harshal Deshpande</author>
+	<author email="mihirk284@gmail.com">Mihir Kulkarni</author>
+
+
+	<buildtool_depend>catkin</buildtool_depend>
+	<!-- <buildtool_depend>catkin_simple</buildtool_depend> -->
+
+	<depend>geometry_msgs</depend>
+	<depend>rospy</depend>
+	<depend>roscpp</depend>
+	<depend>std_msgs</depend>
+
+</package>

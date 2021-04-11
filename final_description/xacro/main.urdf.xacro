@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="final">
+
+	
+	<xacro:include filename="$(find final_description)/xacro/gazebo.urdf.xacro"/>
+	<xacro:include filename="$(find final_description)/xacro/wheel.urdf.xacro" />
+	<xacro:include filename="$(find final_description)/xacro/camera.urdf.xacro" />
+
+	<link name="origin_link"/>
+	<link name="base_link">
+	<inertial>
+		<mass value="0.743904097826017"/>
+		<inertia
+			ixx="0.0128815665938208"
+            ixy="-0.000108823075691167"
+            ixz="1.09592346108527E-05"
+            iyy="0.0153938926364957"
+            iyz="2.60023505950379E-07"
+            izz="0.0280566311336355"/>
+	</inertial>
+	<visual>
+		<geometry>
+			<mesh filename="package://final_description/meshes/base_link.STL" />
+		</geometry>
+		<material
+            name="">
+            <color
+              rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+        </material>
+		
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://final_description/meshes/base_link.STL" />
+		</geometry>
+	</collision>
+
+	</link>
+
+
+	<joint name="base_joint" type="fixed">
+		<parent link="origin_link" />
+		<child link="base_link" />
+		<origin xyz="0 0 0.02"/>
+	</joint>
+
+	<xacro:omni_wheel wheel_prefix="front_right">
+		<origin xyz="0.28084 0.28084 0.0212" rpy="1.5708 0 2.3563"/>
+	</xacro:omni_wheel>	
+	<xacro:omni_wheel wheel_prefix="front_left">
+		<origin xyz="0.28084 -0.28084 0.0212" rpy="1.5708 0 0.7854"/>
+	</xacro:omni_wheel>
+	<xacro:omni_wheel wheel_prefix="back_left">
+		<origin xyz="-0.28084 -0.28084 0.0212" rpy="1.5708 0 -0.7854"/>
+	</xacro:omni_wheel>	
+	<xacro:omni_wheel wheel_prefix="back_right">
+		<origin xyz="-0.28084 0.28084 0.0212" rpy="-1.5708 0 0.7854"/>
+	</xacro:omni_wheel>
+
+
+
+  	<joint name="body_joint" type="fixed">
+  		<parent link="base_link"/>
+  		<child link="body_link"/>
+  		<origin xyz="0 0 0.03" rpy="1.57 0 3.14"/>
+  	</joint>
+
+  	<link name="body_link">
+      	<inertial>
+      		<mass value="0.1" />
+      		<origin xyz="0 0 0" />
+      		<inertia 	ixx="0.000056443" ixy="0.0" ixz="0.0"
+               			iyy="0.0012923047" iyz="0.0"
+               			izz="0.000113232" />
+    	</inertial>
+  	</link>
+
+
+   
+
+</robot>

@@ -1,0 +1,11 @@
+Packages installed:
+
+1) sudo apt-get install ros-melodic-gazebo-* (Updates gazebo)
+2) sudo apt-get install ros-melodic-effort-controllers*
+3) sudo apt-get install ros-melodic-joint*
+4) sudo apt-get install ros-melodic-velocity-controllers*
+5) sudo apt-get install ros-melodic-control*
+6)ros_control package
+
+1) When in launch folder "roslaunch ./omnibase.launch" can be done
+
